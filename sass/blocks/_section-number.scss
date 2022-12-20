@@ -1,0 +1,35 @@
+.section-number {
+  font-family: "Coign Pro 34", sans-serif;
+  font-weight: 700;
+  font-size: 581px;
+  line-height: 0.75;
+  letter-spacing: 5px;
+
+  @media (max-width: 1844px) {
+    font-size: 500px;
+  }
+
+  @media (max-width: 1919px) {
+    font-size: 480px;
+  }
+
+  @media (max-width: 1599px) {
+    font-size: 475px;
+  }
+
+  @media (max-width: 1199px) {
+    font-size: 315px;
+    height: 142px;
+  }
+
+  @media (max-width: 899px) {
+    font-size: 200px;
+    height: 102px;
+  }
+
+  @media (max-width: 599px) {
+    font-size: 141px;
+    letter-spacing: 1.2px;
+    height: auto;
+  }
+}

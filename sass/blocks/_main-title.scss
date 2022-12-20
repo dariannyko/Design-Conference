@@ -1,0 +1,21 @@
+.main-title {
+    font-family: "Druk Cyr", sans-serif;
+    font-weight: 500;
+    font-size: 526px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    @media (max-width: 1599px) {
+        font-size: 430px;
+    }
+
+    @media (max-width: 1199px) {
+        font-size: 247px;
+        line-height: 1;
+        letter-spacing: 0.4px;
+    }
+
+    @media (max-width: 599px) {
+        font-size: 173px;
+    }
+}

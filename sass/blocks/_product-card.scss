@@ -1,0 +1,224 @@
+.product-card {
+  padding: 36px 36px 0;
+  width: 804px;
+  max-height: 508px;
+  background-color: $blue-accent;
+  border-radius: 40px;
+  &::after {
+    content: "";
+    position: relative;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    @media (max-width: 1599px) {
+      width: 18px;
+      height: 18px;
+    }
+    @media (max-width: 1199px) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  @media (max-width: 1599px) {
+    width: 740px;
+    height: 455px;
+  }
+
+  @media (max-width: 1199px) {
+    width: 512px;
+    height: 324px;
+    padding: 22px 21px 0;
+    border-radius: 25px;
+  }
+
+  @media (max-width: 899px) {
+    width: 430px;
+    height: 280px;
+    padding: 18px 18px 0;
+  }
+
+  @media (max-width: 599px) {
+    border-radius: 24px;
+    max-width: 265px;
+    height: 415px;
+    flex-shrink: 0;
+  }
+}
+.product-card,
+.product-card__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-card__wrapper {
+  max-width: 700px;
+  flex-shrink: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+
+  @media (max-width: 1599px) {
+    max-width: 639px;
+  }
+  @media (max-width: 1199px) {
+    max-width: 426px;
+  }
+
+  @media (max-width: 899px) {
+    max-width: 357px;
+  }
+
+  @media (max-width: 599px) {
+    max-width: 200px;
+    margin-left: auto;
+  }
+}
+
+.product-card__description {
+  max-width: 318px;
+  margin: 40px 0 0;
+  flex-shrink: 0;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: #1e1f31;
+
+  .product-card__title {
+    margin: 0 0 30px;
+    font-size: 27px;
+    line-height: 1;
+    @media (max-width: 1599px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 1199px) {
+      font-size: 15px;
+      margin: 0 0 20px;
+    }
+
+    @media (max-width: 899px) {
+      font-size: 14px;
+      margin: 0 0 12px;
+    }
+
+    @media (max-width: 599px) {
+      margin: 0 0 16px;
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 1599px) {
+    font-size: 22px;
+    max-width: 300px;
+  }
+
+  @media (max-width: 1199px) {
+    max-width: 170px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  @media (max-width: 899px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 599px) {
+    margin: 82px 0 0 0;
+    max-width: 197px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.product-card--ant {
+  background-color: $pink-accent;
+
+  .product-card__description {
+    margin: 40px 0 0 -115px;
+
+    @media (max-width: 1199px) {
+      margin: 22px 0 0 -115px;
+    }
+
+    @media (max-width: 599px) {
+      margin: 82px 0 0 0;
+    }
+  }
+
+  .product-card__img {
+    @media (max-width: 1199px) {
+      width: 320px;
+    }
+
+    @media (max-width: 899px) {
+      width: 270px;
+    }
+
+    @media (max-width: 599px) {
+      display: none;
+      margin: 82px 0 0 0;
+    }
+  }
+}
+
+.product-card-alien--pipe {
+  background-color: $blue-accent;
+}
+
+.product-card-robo--alien {
+  background-color: $green-accent;
+}
+
+.product-card--worm {
+  background-color: $main-page-accent;
+}
+
+.scroll-show-cards {
+  opacity: 1;
+  transition: opacity 0.6s ease-in;
+}
+.scroll-show-cards.scroll-hidden {
+  opacity: 0;
+}
+
+.product-card__img {
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+
+  // @media (max-width: 1599px) {
+  //   width: 450px;
+  // }
+
+  // @media (max-width: 1199px) {
+  //   img {
+  //     height: auto;
+  //   }
+
+  //   width: 216px;
+  // }
+
+  @media (max-width: 599px) {
+    display: none;
+  }
+}
+
+.product-card__text {
+  @media (max-width: 599px) {
+    display: none;
+  }
+}
+
+.product-card__mobile-desc {
+  display: none;
+
+  @media (max-width: 599px) {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,219 @@
+.for-whom {
+  position: relative;
+  max-width: 1920px;
+  width: 100%;
+  padding: 348px 0 123px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @media (max-width: 1599px) {
+    padding: 300px 0 123px;
+  }
+
+  @media (max-width: 1199px) {
+    padding: 240px 0 70px;
+  }
+
+  @media (max-width: 899px) {
+    padding: 125px 0 0;
+  }
+
+  @media (max-width: 599px) {
+    padding: 141px 0 0;
+  }
+  .thin-link {
+    color: #fff;
+
+    @media (max-width: 599px) {
+      max-width: 100%;
+    }
+  }
+  .thin-link__description {
+    max-width: 30px;
+  }
+
+  .product-card {
+    bottom: 0;
+    left: 0;
+    &:not(:first-child) {
+      pointer-events: none;
+    }
+  }
+
+  .product-card--worm {
+    position: absolute;
+    margin: 0 0 0 60px;
+    opacity: 0.2;
+
+    @media (max-width: 1199px) {
+      margin: 0 0 0 36px;
+    }
+  }
+  .product-card-robo--alien {
+    position: absolute;
+    margin: 0 0 0 40px;
+    opacity: 0.2;
+    z-index: 1;
+
+    @media (max-width: 1199px) {
+      margin: 0 0 0 24px;
+    }
+  }
+  .product-card-alien--pipe {
+    position: absolute;
+    margin: 0 0 0 20px;
+    opacity: 0.2;
+    z-index: 2;
+
+    @media (max-width: 1199px) {
+      margin: 0 0 0 12px;
+    }
+  }
+  .product-card--ant {
+    position: absolute;
+    left: 0;
+    z-index: 3;
+  }
+
+  .count {
+    @media (max-width: 899px) {
+      display: none;
+    }
+    @media (max-width: 599px) {
+      display: none;
+    }
+  }
+}
+
+.for-whom__description,
+.for-whom__view-more {
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 899px) {
+    justify-content: unset;
+  }
+}
+
+.for-whom__description {
+  align-items: flex-start;
+  user-select: none;
+
+  @media (max-width: 599px) {
+    flex-direction: column-reverse;
+  }
+}
+
+.for-whom__annotation {
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  max-width: 264px;
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #ea060d;
+  transition: opacity 0.6s ease-in;
+
+  &.scroll-hidden {
+    opacity: 0;
+  }
+
+  @media (max-width: 1599px) {
+    font-size: 30px;
+    max-width: 215px;
+  }
+
+  @media (max-width: 1199px) {
+    font-size: 22px;
+    max-width: 164px;
+  }
+
+  @media (max-width: 899px) {
+    margin: 0 0 0 95px;
+    max-width: 155px;
+    font-size: 18px;
+  }
+
+  @media (max-width: 599px) {
+    margin: 0 0 85px;
+    align-self: flex-end;
+    font-size: 16px;
+  }
+}
+
+.for-whom__view-more {
+  align-items: flex-end;
+
+  p {
+    user-select: none;
+  }
+
+  @media (max-width: 899px) {
+    flex-direction: column;
+
+    .title {
+      margin: 0 0 15px;
+      align-self: flex-start;
+    }
+  }
+
+  @media (max-width: 599px) {
+    flex-direction: column;
+
+    .title {
+      margin: 0 0 15px;
+      align-self: flex-start;
+    }
+  }
+}
+
+.for-whom__list {
+  position: absolute;
+  width: 1865px;
+  height: 508px;
+  left: 460px;
+  bottom: 305px;
+  scroll-behavior: smooth;
+  cursor: grab;
+  touch-action: none;
+
+  @media (max-width: 1919px) {
+    left: 230px;
+    width: 1750px;
+  }
+
+  @media (max-width: 1599px) {
+    left: 242px;
+    bottom: 260px;
+    width: 1628px;
+  }
+
+  @media (max-width: 1539px) {
+    left: 24px;
+  }
+
+  @media (max-width: 1199px) {
+    width: 1090px;
+    height: 324px;
+    left: 122px;
+    bottom: 157px;
+  }
+
+  @media (max-width: 899px) {
+    bottom: 130px;
+    height: 280px;
+    width: 1000px;
+    left: 68px;
+  }
+
+  @media (max-width: 599px) {
+    left: 9px;
+    bottom: 75px;
+    height: 443px;
+    width: 650px;
+  }
+}
+
+.for-whom__list .scroll-show-cards {
+  display: flex;
+}

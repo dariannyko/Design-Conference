@@ -1,0 +1,40 @@
+.main-header__animation {
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    top: -35px;
+    left: 0;
+
+    @media (max-width: 1599px) {
+      top: 15px;
+    }
+
+    @media (max-width: 1199px) {
+      top: 70px
+    }
+
+    @media (max-width: 899px) {
+      top: 60px;
+    }
+
+    @media (max-width: 599px) {
+      top: 50px;
+    }
+  }
+  
+  .main-title-animated {
+    will-change: transform;
+    color: #3f2215;
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+    padding-right: 40px;
+  }
+  
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }

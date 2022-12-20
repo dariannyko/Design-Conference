@@ -1,0 +1,152 @@
+.photo-gallery {
+  padding: 390px 0 67px;
+  background-color: #9fbfae;
+
+  @media (max-width: 1599px) {
+    padding: 230px 0 67px;
+  }
+  @media (max-width: 1199px) {
+    padding: 180px 0 18px;
+  }
+
+  @media (max-width: 899px) {
+    padding: 150px 0 18px;
+  }
+
+  @media (max-width: 599px) {
+    padding: 115px 0 20px;
+  }
+
+  .title {
+    @media (max-width: 599px) {
+      display: none;
+    }
+  }
+  .container {
+
+    @media (max-width: 1199px) {
+      max-width: 900px;
+    }
+   
+  }
+}
+.photo-gallery__title-wrapper {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 0 82px;
+
+  @media (max-width: 1199px) {
+    justify-content: space-between;
+    margin: 0 0 35px;
+  }
+
+  @media (max-width: 599px) {
+    display: none;
+  }
+
+  img {
+    margin: 0 115px 0 0;
+    margin-left: auto;
+
+    @media (max-width: 1199px) {
+      width: 100px;
+      height: 100px;
+      margin: 0 22px 0 0;
+    }
+  }
+}
+.photo-gallery__list {
+  padding: 0 376px 0 0;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  cursor: pointer;
+  // transition: transform 0.2s ease-in;
+
+  // &:active {
+  //   transform: scale(1.05, 1.05);
+  // }
+
+  @media (max-width: 599px) {
+    padding: 0 65px 0 0;
+  }
+}
+
+.photo-gallery__list::-webkit-scrollbar {
+  width: 0;
+}
+
+.photo-gallery__item {
+  padding: 15px 30px 38px;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 25px;
+  flex-shrink: 0;
+  background-color: $main-dark-color;
+
+  @media (max-width: 1199px) {
+    padding: 15px 12px 18px;
+  }
+}
+
+.photo-gallery__workshop {
+  font-weight: 500;
+  font-size: 14.77px;
+  line-height: 1.21;
+  color: #ffffff;
+  flex-shrink: 0;
+  align-self: flex-end;
+
+  img {
+    margin: 0 0 15px;
+
+    @media (max-width: 1199px) {
+      margin: 0 0 10px;
+    }
+  }
+
+  @media (max-width: 1599px) {
+    max-width: 263px;
+  }
+  @media (max-width: 1199px) {
+    max-width: 188px;
+    font-size: 8px;
+  }
+}
+.photo-gallery__title {
+  max-width: 875px;
+  font-family: "Druk Cyr", sans-serif;
+  font-weight: 500;
+  font-size: 252px;
+  line-height: 0.81;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  @media (max-width: 1919px) {
+    font-size: 235px;
+  }
+  @media (max-width: 1599px) {
+    font-size: 170px;
+    max-width: 600px;
+  }
+
+  @media (max-width: 1199px) {
+    font-size: 118px;
+    max-width: 411px;
+  }
+}
+
+.photo-gallery__description {
+  display: none;
+
+  @media (max-width: 599px) {
+    display: block;
+    margin: 0 0 150px auto;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    max-width: 170px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+}

@@ -1,0 +1,220 @@
+.speaker-card {
+  display: flex;
+  position: relative;
+  padding: 36px;
+  width: 804px;
+  height: 508px;
+  max-height: 508px;
+  background-color: $blue-accent;
+  border-radius: 40px;
+
+  &::after {
+    content: "";
+    position: relative;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 1599px) {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: 1199px) {
+      width: 14px;
+      height: 14px;
+    }
+
+    @media (max-width: 599px) {
+      margin-left: -20px;
+    }
+  }
+
+  &:nth-child(4) {
+    /*Mobile XS*/
+    @media (max-width: 599px) {
+      .speaker-card__description {
+        color: #fff;
+      }
+
+      .speaker-card__speaker-title-item:nth-child(1) {
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      .speaker-card__speaker-title-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
+  @media (max-width: 1599px) {
+    width: 740px;
+    height: 455px;
+  }
+
+  @media (max-width: 1199px) {
+    width: 512px;
+    height: 324px;
+    padding: 23px 21px 0 0;
+    border-radius: 26px;
+  }
+
+  @media (max-width: 899px) {
+    width: 430px;
+    height: 280px;
+    padding: 18px 18px 0 0;
+    border-radius: 24px;
+  }
+
+  @media (max-width: 599px) {
+    max-width: 302px;
+    height: 443px;
+    padding: 27px 22px 15px;
+    border-radius: 24px;
+  }
+}
+
+.speaker-card__img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  border-radius: 0 0 0 40px;
+  height: 100%;
+  width: auto;
+
+  @media (max-width: 1199px) {
+    border-radius: 0 0 0 25px;
+  }
+
+  @media (max-width: 599px) {
+    object-fit: cover;
+    height: 100%;
+    border-radius: 24px;
+  }
+}
+.speaker-card__description {
+  position: relative;
+  z-index: 1;
+  max-width: 324px;
+  width: 100%;
+  margin: 74px 10px 0 auto;
+  font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+
+  @media (max-width: 1199px) {
+    max-width: 205px;
+  }
+
+  @media (max-width: 899px) {
+    max-width: 180px;
+  }
+
+  @media (max-width: 599px) {
+    max-width: 100%;
+    margin: 0;
+    align-self: flex-end;
+  }
+}
+.speaker-card__title {
+  margin: 0 0 5px;
+  font-size: 40px;
+  letter-spacing: -0.03em;
+
+  @media (max-width: 1199px) {
+    margin: 0 0 3px;
+    font-size: 25px;
+    line-height: 1;
+  }
+
+@media (max-width: 899px) {
+    font-size: 22px;
+}
+  @media (max-width: 599px) {
+    font-size: 24px;
+    margin: 0 0 5px;
+  }
+}
+
+.speaker-card__speaker-title-item {
+  padding: 20px 0 6px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+  &:nth-child(1) {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &:not(:first-child) {
+    @media (max-width: 599px) {
+      display: none;
+    }
+  }
+  @media (max-width: 1199px) {
+    padding: 7px 0 4px;
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  @media (max-width: 899px) {
+    padding: 5px 0 3px;
+    font-size: 13px;
+  }
+
+  @media (max-width: 599px) {
+    padding: 10px 0 5px;
+    font-size: 10px;
+  }
+}
+
+.speaker-card__speaker-title-desc {
+  font-size: 17px;
+
+  @media (max-width: 1199px) {
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  @media (max-width: 899px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 599px) {
+    font-size: 10px;
+  }
+}
+
+.speaker-card--orange {
+  background-color: #df612b;
+}
+
+.speaker-card--pink {
+  background-color: #ba7188;
+  .speaker-card__description {
+    color: #35242e;
+  }
+
+  .speaker-card__speaker-title-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+
+    &:nth-child(1) {
+      border-top: 1px solid rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+
+.speaker-card--background {
+  .speaker-card__img {
+    left: unset;
+    right: 0;
+    border-radius: 0 0 40px 0;
+
+    @media (max-width: 599px) {
+      border-radius: 24px;
+    }
+  }
+}

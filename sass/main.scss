@@ -1,0 +1,38 @@
+// Base
+@import "./base/vars";
+@import "./base/reset";
+@import "./base/base";
+@import "./base/fonts";
+
+// Blocks
+@import "./blocks/main-title";
+@import "./blocks/section_title";
+@import "./blocks/section-number";
+@import "./blocks/description-card";
+@import "./blocks/column-number";
+@import "./blocks/thin-link-header";
+@import "./blocks/title";
+@import "./blocks/thin-link";
+@import "./blocks/count";
+@import "./blocks/full-page-link";
+@import "./blocks/event-preview";
+@import "./blocks/product-card";
+@import "./blocks/speaker-card";
+@import "./blocks/inline-link";
+@import "./blocks/main-header";
+@import "./blocks/inline-link-Druk-Cyr";
+@import "./blocks/modal-menu";
+
+//Sections
+@import "./sections/header";
+@import "./sections/about";
+@import "./sections/summary";
+@import "./sections/video-conferences";
+@import "./sections/mission";
+@import "./sections/for-whom";
+@import "./sections/our-speakers";
+@import "./sections/our-schedule";
+@import "./sections/photo-gallery";
+@import "./sections/take-part";
+@import "./sections/partners";
+@import "./sections/footer";
