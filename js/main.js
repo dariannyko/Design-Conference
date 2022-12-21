@@ -82,8 +82,6 @@ forBeginnersCard.addEventListener("click", () => {
 
 //speakers timetable
 
-console.log(document.documentElement.clientWidth);
-
 const scheduleEvents = document.querySelectorAll(".schedule__item--speaker");
 const tabletWidth = 899;
 
@@ -166,6 +164,28 @@ MODAL.modalLinks.forEach((item) => {
 // scroll
 gsap.registerPlugin(ScrollTrigger);
 
+const desCards = gsap.utils.toArray(
+  ".our-mission__desc-cards .description-card"
+);
+
+let media = gsap.matchMedia();
+
+media.add("(max-width: 599px)", () => {
+  gsap.from(desCards, {
+    scrollTrigger: {
+      trigger: ".our-mission__desc-cards",
+      start: "center center",
+      end: ".bottom top",
+      scrub: true,
+      markers: false,
+      pin: true,
+      toggleAction: "restart pause reverse pause",
+    },
+    x: -(descCardSlider.scrollWidth - document.documentElement.clientWidth),
+    duration: 5,
+  });
+});
+
 function scrollCards(direction) {
   gsap.timeline({
     scrollTrigger: {
@@ -188,27 +208,7 @@ if(document.documentElement.clientWidth >=599) {
   scrollCards({y: innerHeight*1})
 }
 
-const desCards = gsap.utils.toArray(
-  ".our-mission__desc-cards .description-card"
-);
 
-let media = gsap.matchMedia();
-
-// media.add("(max-width: 599px)", () => {
-//   gsap.from(desCards, {
-//     scrollTrigger: {
-//       trigger: ".our-mission__desc-cards",
-//       start: "center center",
-//       end: ".bottom top",
-//       scrub: true,
-//       markers: false,
-//       pin: true,
-//       toggleAction: "restart pause reverse pause",
-//     },
-//     x: -(descCardSlider.scrollWidth - document.documentElement.clientWidth),
-//     duration: 5,
-//   });
-// });
 
 const photoItems = gsap.utils.toArray(".photo-gallery__item");
 gsap.from(photoItems, {
