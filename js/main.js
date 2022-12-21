@@ -155,7 +155,7 @@ media.add("(max-width: 599px)", () => {
     scrollTrigger: {
       trigger: ".our-mission__desc-cards",
       start: "center center",
-      end: "+=3000px",
+      end: "+=2000px",
       scrub: true,
       pin: true,
       toggleAction: "restart pause reverse pause",
@@ -170,7 +170,7 @@ function scrollCards(direction) {
       scrollTrigger: {
         trigger: ".for-whom__wrapper",
         start: "center center",
-        end: "+=3000px",
+        end: "+=5000px",
         scrub: true,
         pin: true,
       },
