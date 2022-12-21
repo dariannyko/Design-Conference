@@ -270,8 +270,8 @@
   }
 
   @media (max-width: 599px) {
-    left: -137px;
-    right: 306px;
+    left: -100px;
+    right: 325px;
   }
 
   .product-card:not(:first-child) {
@@ -356,7 +356,7 @@
       }
 
       @media (max-width: 599px) {
-        margin: 0 0 0 25px;
+        margin: 0 0 0 60px;
       }
     }
 
@@ -371,6 +371,9 @@
 
   .speaker-card:hover {
     transform: scale(1.05, 1.05);
+    @media (max-width: 899px) {
+      transform: unset;
+    }
   }
 }
 

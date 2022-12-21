@@ -182,7 +182,7 @@ media.add("(max-width: 599px)", () => {
       toggleAction: "restart pause reverse pause",
     },
     x: -(descCardSlider.scrollWidth - document.documentElement.clientWidth),
-    duration: 5,
+    duration: 50,
   });
 });
 
@@ -193,7 +193,7 @@ function scrollCards(direction) {
       start: "center center",
       end: "bottom top",
       scrub: true,
-      markers: true,
+      markers: false,
       pin: true, 
     }
   })
@@ -215,6 +215,7 @@ gsap.from(photoItems, {
   scrollTrigger: {
     trigger: ".photo-gallery__list",
     start: "center center",
+    end: "bottom top",
     scrub: true,
     markers: false,
     pin: true,
