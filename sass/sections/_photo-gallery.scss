@@ -57,15 +57,11 @@
 }
 .photo-gallery__list {
   padding: 0 376px 0 0;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   display: flex;
   cursor: pointer;
-  // transition: transform 0.2s ease-in;
 
-  // &:active {
-  //   transform: scale(1.05, 1.05);
-  // }
 
   @media (max-width: 599px) {
     padding: 0 65px 0 0;

@@ -4,7 +4,8 @@
     <!-- encoding -->
     <meta charset="UTF-8" />
     <!-- Mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <!-- Title and SEO -->
     <title>Стартовый шаблон</title>
@@ -18,6 +19,7 @@
     <link rel="preload" href="./fonts/NeueHaasDisplay-Roman.woff2" as="font" crossorigin="anonymous">
 
     <!-- Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"/>
     <link rel="stylesheet" href="./css/main.css" />
 
     <!-- Open Graph -->
@@ -37,7 +39,8 @@
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <header class="main-header" id="home" >
+    <div class="scroll-container">
+      <header class="main-header" id="home" >
       <div class="container">
         <div class="main-header-nav__wrapper">
           <a class="logo" href="#" aria-label="logo">
@@ -834,14 +837,14 @@
             </li>
             <li class="speaker__item speaker__item--hidden none" data-speaker = event4>
               <picture>
-                <source srcset="./img/speakers/katerina-izmailova.webp">
-                <img src="./img/speakers/katerina-izmailova.jpg" alt="Speaker Katerina-izmailova" width="532" height="436">
+                <source srcset="./img/speakers/anna-marso.webp">
+                <img src="./img/speakers/anna-marso.jpg" alt="Speaker Katerinai Izmailova" width="532" height="436">
               </picture>
             </li>
             <li class="speaker__item speaker__item--hidden none" data-speaker = event5>
               <picture>
-                <source srcset="./img/speakers/katerina-izmailova.webp">
-                <img src="./img/speakers/katerina-izmailova.jpg" alt="Speaker Katerina-izmailova" width="532" height="436">
+                <source srcset="./img/speakers/massimo-santini.webp">
+                <img src="./img/speakers/massimo-santini.jpg" alt="Speaker Massimo Santi" width="532" height="436">
               </picture>
             </li>
             <li class="speaker__item speaker__item--hidden none" data-speaker = event6>
@@ -1176,8 +1179,10 @@
         </div>
       </div>
     </footer>
+  </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>

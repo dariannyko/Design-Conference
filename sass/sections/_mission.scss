@@ -302,7 +302,7 @@
 .our-mission__desc-cards {
   @media (max-width: 599px) {
     display: flex;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
     column-gap: 20px;
     padding: 0 9px;

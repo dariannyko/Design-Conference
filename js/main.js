@@ -28,8 +28,6 @@ VIDEO.videoSliderButtonsWrapper.addEventListener("click", (event) => {
 
 VIDEO.videoSection.addEventListener("click", closeVideoHover);
 
-
-
 //touch slider speakers
 
 const speakerSlider = document.querySelector(".our-speakers__list");
@@ -55,24 +53,6 @@ speakerSlider.addEventListener("mouseup", () => {
 
 speakerSlider.addEventListener("mousemove", (event) => {
   onMouseMove(event, speakerSlider);
-});
-
-// photo gallery slider
-
-photoGalleySlider.addEventListener("mousedown", (event) => {
-  onMouseDown(event, photoGalleySlider);
-});
-
-photoGalleySlider.addEventListener("mouseleave", () => {
-  SLIDER.isDown = false;
-});
-
-photoGalleySlider.addEventListener("mouseup", () => {
-  onMouseUp(photoGalleySlider);
-});
-
-photoGalleySlider.addEventListener("mousemove", (event) => {
-  onMouseMove(event, photoGalleySlider);
 });
 
 //show and hide speakers cards
@@ -162,7 +142,35 @@ MODAL.modalLinks.forEach((item) => {
 });
 
 // scroll
-gsap.registerPlugin(ScrollTrigger);
+
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector(".scroll-container"),
+  smooth: true,
+  smartphone: {
+    smooth: true,
+  },
+});
+
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy(".scroll-container", {
+  scrollTop(value) {
+    return arguments.length
+      ? locoScroll.scrollTo(value, 0, 0)
+      : locoScroll.scroll.instance.scroll.y;
+  },
+  getBoundingClientRect() {
+    return {
+      top: 0,
+      left: 0,
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+  },
+  pinType: document.querySelector(".scroll-container").style.transform
+    ? "transform"
+    : "fixed",
+});
 
 const desCards = gsap.utils.toArray(
   ".our-mission__desc-cards .description-card"
@@ -174,53 +182,53 @@ media.add("(max-width: 599px)", () => {
   gsap.from(desCards, {
     scrollTrigger: {
       trigger: ".our-mission__desc-cards",
+      scroller: ".scroll-container",
       start: "center center",
-      end: ".bottom top",
+      end: "+=3000px",
       scrub: true,
-      markers: false,
       pin: true,
       toggleAction: "restart pause reverse pause",
     },
     x: -(descCardSlider.scrollWidth - document.documentElement.clientWidth),
-    duration: 50,
   });
 });
 
 function scrollCards(direction) {
-  gsap.timeline({
-    scrollTrigger: {
-      trigger:".for-whom__wrapper",
-      start: "center center",
-      end: "bottom top",
-      scrub: true,
-      markers: false,
-      pin: true, 
-    }
-  })
-  .to(".for-whom .product-card--ant", {...direction, opacity: 0.2, duration:50})
-  .to(".for-whom .product-card-alien--pipe", {...direction, opacity: 0.2, duration:50})
-  .to(".for-whom .product-card-robo--alien", {...direction, opacity: 0.2, duration:50})
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".for-whom__wrapper",
+        scroller: ".scroll-container",
+        start: "center center",
+        end: "+=3000px",
+        scrub: true,
+        pin: true,
+      },
+    })
+    .to(".for-whom .product-card--ant", { ...direction, opacity: 0.2 })
+    .to(".for-whom .product-card-alien--pipe", { ...direction, opacity: 0.2 })
+    .to(".for-whom .product-card-robo--alien", { ...direction, opacity: 0.2 });
 }
 
-if(document.documentElement.clientWidth >=599) {
-  scrollCards({x: innerWidth*1})
+if (document.documentElement.clientWidth >= 599) {
+  scrollCards({ x: innerWidth * 1 });
 } else {
-  scrollCards({y: innerHeight*1})
+  scrollCards({ y: innerHeight * 1 });
 }
-
-
 
 const photoItems = gsap.utils.toArray(".photo-gallery__item");
 gsap.from(photoItems, {
   scrollTrigger: {
     trigger: ".photo-gallery__list",
+    scroller: ".scroll-container",
     start: "center center",
-    end: "bottom top",
+    end: "+=3000px",
     scrub: true,
-    markers: false,
     pin: true,
     toggleAction: "restart pause reverse pause",
   },
   x: -(photoGalleySlider.scrollWidth - document.documentElement.clientWidth), //scrollLeft
-  duration: 5,
 });
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ScrollTrigger.refresh();
