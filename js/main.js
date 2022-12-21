@@ -142,35 +142,7 @@ MODAL.modalLinks.forEach((item) => {
 });
 
 // scroll
-
-const locoScroll = new LocomotiveScroll({
-  el: document.querySelector(".scroll-container"),
-  smooth: true,
-  smartphone: {
-    smooth: true,
-  },
-});
-
-locoScroll.on("scroll", ScrollTrigger.update);
-
-ScrollTrigger.scrollerProxy(".scroll-container", {
-  scrollTop(value) {
-    return arguments.length
-      ? locoScroll.scrollTo(value, 0, 0)
-      : locoScroll.scroll.instance.scroll.y;
-  },
-  getBoundingClientRect() {
-    return {
-      top: 0,
-      left: 0,
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-  },
-  pinType: document.querySelector(".scroll-container").style.transform
-    ? "transform"
-    : "fixed",
-});
+gsap.registerPlugin(ScrollTrigger);
 
 const desCards = gsap.utils.toArray(
   ".our-mission__desc-cards .description-card"
@@ -182,7 +154,6 @@ media.add("(max-width: 599px)", () => {
   gsap.from(desCards, {
     scrollTrigger: {
       trigger: ".our-mission__desc-cards",
-      scroller: ".scroll-container",
       start: "center center",
       end: "+=3000px",
       scrub: true,
@@ -198,7 +169,6 @@ function scrollCards(direction) {
     .timeline({
       scrollTrigger: {
         trigger: ".for-whom__wrapper",
-        scroller: ".scroll-container",
         start: "center center",
         end: "+=3000px",
         scrub: true,
@@ -220,7 +190,6 @@ const photoItems = gsap.utils.toArray(".photo-gallery__item");
 gsap.from(photoItems, {
   scrollTrigger: {
     trigger: ".photo-gallery__list",
-    scroller: ".scroll-container",
     start: "center center",
     end: "+=3000px",
     scrub: true,
@@ -230,5 +199,3 @@ gsap.from(photoItems, {
   x: -(photoGalleySlider.scrollWidth - document.documentElement.clientWidth), //scrollLeft
 });
 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-ScrollTrigger.refresh();
