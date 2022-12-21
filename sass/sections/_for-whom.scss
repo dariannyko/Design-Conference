@@ -32,48 +32,48 @@
     max-width: 30px;
   }
 
-  .product-card {
-    bottom: 0;
-    left: 0;
-    &:not(:first-child) {
-      pointer-events: none;
-    }
-  }
+  // .product-card {
+  //   bottom: 0;
+  //   left: 0;
+  //   &:not(:first-child) {
+  //     pointer-events: none;
+  //   }
+  // }
 
-  .product-card--worm {
-    position: absolute;
-    margin: 0 0 0 60px;
-    opacity: 0.2;
+  // .product-card--worm {
+  //   position: absolute;
+  //   margin: 0 0 0 60px;
+  //   opacity: 0.2;
 
-    @media (max-width: 1199px) {
-      margin: 0 0 0 36px;
-    }
-  }
-  .product-card-robo--alien {
-    position: absolute;
-    margin: 0 0 0 40px;
-    opacity: 0.2;
-    z-index: 1;
+  //   @media (max-width: 1199px) {
+  //     margin: 0 0 0 36px;
+  //   }
+  // }
+  // .product-card-robo--alien {
+  //   position: absolute;
+  //   margin: 0 0 0 40px;
+  //   opacity: 0.2;
+  //   z-index: 1;
 
-    @media (max-width: 1199px) {
-      margin: 0 0 0 24px;
-    }
-  }
-  .product-card-alien--pipe {
-    position: absolute;
-    margin: 0 0 0 20px;
-    opacity: 0.2;
-    z-index: 2;
+  //   @media (max-width: 1199px) {
+  //     margin: 0 0 0 24px;
+  //   }
+  // }
+  // .product-card-alien--pipe {
+  //   position: absolute;
+  //   margin: 0 0 0 20px;
+  //   opacity: 0.2;
+  //   z-index: 2;
 
-    @media (max-width: 1199px) {
-      margin: 0 0 0 12px;
-    }
-  }
-  .product-card--ant {
-    position: absolute;
-    left: 0;
-    z-index: 3;
-  }
+  //   @media (max-width: 1199px) {
+  //     margin: 0 0 0 12px;
+  //   }
+  // }
+  // .product-card--ant {
+  //   position: absolute;
+  //   left: 0;
+  //   z-index: 3;
+  // }
 
   .count {
     @media (max-width: 899px) {
@@ -167,53 +167,111 @@
   }
 }
 
-.for-whom__list {
-  position: absolute;
-  width: 1865px;
-  height: 508px;
-  left: 460px;
-  bottom: 305px;
-  scroll-behavior: smooth;
-  cursor: grab;
-  touch-action: none;
+// .for-whom__list {
+//   position: absolute;
+//   width: 1865px;
+//   height: 508px;
+//   left: 460px;
+//   bottom: 305px;
+//   scroll-behavior: smooth;
+//   cursor: grab;
+//   touch-action: none;
 
-  @media (max-width: 1919px) {
-    left: 230px;
-    width: 1750px;
-  }
+//   @media (max-width: 1919px) {
+//     left: 230px;
+//     width: 1750px;
+//   }
 
-  @media (max-width: 1599px) {
-    left: 242px;
-    bottom: 260px;
-    width: 1628px;
-  }
+//   @media (max-width: 1599px) {
+//     left: 242px;
+//     bottom: 260px;
+//     width: 1628px;
+//   }
 
-  @media (max-width: 1539px) {
-    left: 24px;
-  }
+//   @media (max-width: 1539px) {
+//     left: 24px;
+//   }
 
-  @media (max-width: 1199px) {
-    width: 1090px;
-    height: 324px;
-    left: 122px;
-    bottom: 157px;
-  }
+//   @media (max-width: 1199px) {
+//     width: 1090px;
+//     height: 324px;
+//     left: 122px;
+//     bottom: 157px;
+//   }
 
-  @media (max-width: 899px) {
-    bottom: 130px;
-    height: 280px;
-    width: 1000px;
-    left: 68px;
-  }
+//   @media (max-width: 899px) {
+//     bottom: 130px;
+//     height: 280px;
+//     width: 1000px;
+//     left: 68px;
+//   }
 
-  @media (max-width: 599px) {
-    left: 9px;
-    bottom: 75px;
-    height: 443px;
-    width: 650px;
-  }
-}
+//   @media (max-width: 599px) {
+//     left: 9px;
+//     bottom: 75px;
+//     height: 443px;
+//     width: 650px;
+//   }
+// }
 
 .for-whom__list .scroll-show-cards {
   display: flex;
 }
+
+.for-whom__list {
+  position: relative;
+  // overflow-x: hidden;
+}
+
+.for-whom .product-card {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (max-width: 1919px) {
+    top: 40px;
+  }
+
+  @media (max-width: 1599px) {
+    top: 120px;
+  }
+  @media (max-width: 1539px) {
+    top: 55px;
+  }
+
+  @media (max-width: 599px) {
+    top: -40px;
+
+  }
+}
+.for-whom .product-card__img {
+  height: 100%;
+  width: auto;
+}
+
+.for-whom {
+  .product-card--worm {
+    margin: 0 0 0 -60px;
+
+    @media (max-width: 599px) {
+      margin: -45px 0 0;
+    }
+  }
+  .product-card-robo--alien {
+    margin: 0 0 0 -40px;
+
+    @media (max-width: 599px) {
+      margin: -30px 0 0;
+    }
+  }
+  .product-card-alien--pipe {
+    margin: 0 0 0 -20px;
+
+    @media (max-width: 599px) {
+      margin: -15px 0 0;
+    }
+  }
+
+}
+

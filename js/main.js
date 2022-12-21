@@ -9,7 +9,6 @@ import {
 } from "./video-section.js";
 import { onMouseDown, onMouseUp, onMouseMove, SLIDER } from "./touch-slider.js";
 import { showHideCard, forBeginnersCard } from "./show-hide-card.js";
-import { CARD, dragDropCards } from "./dragDropCards.js";
 import { cleanForm, FORM } from "./clean-form.js";
 
 VIDEO.videoContent.addEventListener("click", openVideoTab);
@@ -29,21 +28,7 @@ VIDEO.videoSliderButtonsWrapper.addEventListener("click", (event) => {
 
 VIDEO.videoSection.addEventListener("click", closeVideoHover);
 
-// drag and drop
-CARD.card.forEach((item) => {
-  const currentMarginLeft = getComputedStyle(item).marginLeft;
-  item.addEventListener("pointerdown", function (event) {
-    event.preventDefault();
-    const card = this;
-    dragDropCards(currentMarginLeft, card);
-  });
-});
 
-CARD.card.forEach((item) => {
-  item.ondragstart = function () {
-    return false;
-  };
-});
 
 //touch slider speakers
 
@@ -181,33 +166,55 @@ MODAL.modalLinks.forEach((item) => {
 // scroll
 gsap.registerPlugin(ScrollTrigger);
 
+function scrollCards(direction) {
+  gsap.timeline({
+    scrollTrigger: {
+      trigger:".for-whom__wrapper",
+      start: "center center",
+      end: "bottom top",
+      scrub: true,
+      markers: true,
+      pin: true, 
+    }
+  })
+  .to(".for-whom .product-card--ant", {...direction, opacity: 0.2, duration:50})
+  .to(".for-whom .product-card-alien--pipe", {...direction, opacity: 0.2, duration:50})
+  .to(".for-whom .product-card-robo--alien", {...direction, opacity: 0.2, duration:50})
+}
+
+if(document.documentElement.clientWidth >=599) {
+  scrollCards({x: innerWidth*1})
+} else {
+  scrollCards({y: innerHeight*1})
+}
+
 const desCards = gsap.utils.toArray(
   ".our-mission__desc-cards .description-card"
 );
 
 let media = gsap.matchMedia();
 
-media.add("(max-width: 599px)", () => {
-  gsap.from(desCards, {
-    scrollTrigger: {
-      trigger: ".our-mission__desc-cards",
-      start: "top 10",
-      end: "bottom 10px",
-      scrub: true,
-      markers: false,
-      pin: true,
-      toggleAction: "restart pause reverse pause",
-    },
-    x: -(descCardSlider.scrollWidth - document.documentElement.clientWidth), //scrollLeft
-    duration: 5,
-  });
-});
+// media.add("(max-width: 599px)", () => {
+//   gsap.from(desCards, {
+//     scrollTrigger: {
+//       trigger: ".our-mission__desc-cards",
+//       start: "center center",
+//       end: ".bottom top",
+//       scrub: true,
+//       markers: false,
+//       pin: true,
+//       toggleAction: "restart pause reverse pause",
+//     },
+//     x: -(descCardSlider.scrollWidth - document.documentElement.clientWidth),
+//     duration: 5,
+//   });
+// });
 
 const photoItems = gsap.utils.toArray(".photo-gallery__item");
 gsap.from(photoItems, {
   scrollTrigger: {
     trigger: ".photo-gallery__list",
-    start: "50% 50%",
+    start: "center center",
     scrub: true,
     markers: false,
     pin: true,
