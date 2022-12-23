@@ -274,8 +274,21 @@
   }
 }
 
+// .schedule__list::-webkit-scrollbar {
+//   width: 0;
+// }
 .schedule__list::-webkit-scrollbar {
-  width: 0;
+  width: 16px;
+}
+
+.schedule__list::-webkit-scrollbar-track {
+  background-color: rgb(238, 226, 225);
+  border-radius: 100px;
+}
+
+.schedule__list::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0a9;
+  border-radius: 100px;
 }
 
 .schedule__item {

@@ -170,7 +170,7 @@ function scrollCards(direction) {
       scrollTrigger: {
         trigger: ".for-whom__wrapper",
         start: "center center",
-        end: "+=5000px",
+        end: "+=3000px",
         scrub: true,
         pin: true,
       },

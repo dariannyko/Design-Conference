@@ -182,9 +182,12 @@
 }
 
 .footer__data-processing {
-  margin: 0 0 34px;
 
   @media (max-width: 899px) {
     width: 150px;
+  }
+
+  @media (max-width: 599px) {
+    margin: 0 0 34px;
   }
 }
