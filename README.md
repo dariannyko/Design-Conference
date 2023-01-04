@@ -2,6 +2,8 @@
 
 **Design Conference** -  Project of the Moscow Design Conference site after rebranding 
 
+<br/>
+
 Implemented elements:
 - work with keyframes;
 - gsap scroll trigger;
