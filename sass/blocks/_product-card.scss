@@ -68,7 +68,7 @@
   }
 
   @media (max-width: 899px) {
-    max-width: 357px;
+    max-width: 365px;
   }
 
   @media (max-width: 599px) {
@@ -186,12 +186,10 @@
 }
 
 .product-card__img {
-
   img {
     height: 100%;
     width: auto;
   }
-
 
   @media (max-width: 599px) {
     display: none;
