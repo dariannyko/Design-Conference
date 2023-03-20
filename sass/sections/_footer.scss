@@ -140,8 +140,8 @@
 
   @media (max-width: 599px) {
     display: flex;
-    max-width: 230px;
-    column-gap: 0;
+    max-width: 160px;
+    column-gap: 10px;
   }
 }
 
@@ -169,9 +169,9 @@
   }
 
   @media (max-width: 599px) {
-    width: 63px;
-    height: 64px;
-    padding: 15px;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
   }
 }
 .footer__privacy,
@@ -182,7 +182,6 @@
 }
 
 .footer__data-processing {
-
   @media (max-width: 899px) {
     width: 150px;
   }
